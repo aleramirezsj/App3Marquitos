@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.ListaAlumnos">
+    <ContentPage.Content>
+        <StackLayout x:Name="stkBody2" BackgroundColor="#efefef">
+            <Frame  x:Name="frmFondo" BackgroundColor="White" Padding="24" CornerRadius="0">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image Source="logoisp20.png" HeightRequest="64"></Image>
+                    <Label x:Name="lblTitulo" Text="Lista Alumnos 2022" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large"/>
+                    <Button x:Name="btnDarkMode" Clicked="SetDarkMode" BackgroundColor="#efefef" Margin="10" CornerRadius="15" TextColor="Black" Text="DarkMode"></Button>
+
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+                <StackLayout x:Name="stkBody" BackgroundColor="#efefef">
+
+                    <Button x:Name="btnVentanaEmergente" Text="Recordatorio" FontSize="Micro"></Button>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Marcos.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblMarcos" Text="Marcos Lescano" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Tommy.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblTomas" Text="Tomas Benitez" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Lauti.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblLautaro" Text="Lautaro Acevedo" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Chino.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblChino" Text="Tomas Juarez" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Gaspi.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblGaspar" Text="Gaspar Rios" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Alan.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblAlan" Text="Alan Salguero" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Cesar.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblCesar" Text="Cesar Torres" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Joana.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblJoana" Text="Joana Vera" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="Gabi.jpg" WidthRequest="64" HeightRequest="64"></Image>
+                        <Label x:Name="lblGabriel" Text="Gabriel Sola" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="#1f1f1f" FontSize="Large"/>
+                    </StackLayout>
+
+                    <Button Text="hola" Margin="15"></Button>
+                    <Button Text="hola" Margin="15"></Button>
+                    <Button Text="hola" Margin="15"></Button>
+                    <Button Text="hola" Margin="15"></Button>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

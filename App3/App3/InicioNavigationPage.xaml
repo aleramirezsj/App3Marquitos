@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.InicioNavigationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label FontSize="Large">Pruebas Xamarin</Label>
+                <Image Source="logoisp20"/>
+            </StackLayout>
+            <Button  Text="Lista de Alumnos" Clicked="AbrirListaAlumnos"></Button>
+            <Button Text="Lista de Provincias" Clicked="AbrirListaProvincias"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

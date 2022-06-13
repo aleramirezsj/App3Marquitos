@@ -8,8 +8,12 @@
                 <Label FontSize="Large">Pruebas Xamarin</Label>
                 <Image Source="logoisp20"/>
             </StackLayout>
-            <Button  Text="Lista de Alumnos" Clicked="AbrirListaAlumnos"></Button>
-            <Button Text="Lista de Provincias" Clicked="AbrirListaProvincias"></Button>
+            <Button Text="Lista de Alumnos" Clicked="AbrirListaAlumnos"
+                    BackgroundColor="{StaticResource ColorBotones}"></Button>
+            <Button Text="Lista de Provincias" Clicked="AbrirListaProvincias"
+                    BackgroundColor="{StaticResource ColorBotones}"></Button>
+            <Button Text="Controles Comunes" Clicked="AbrirControlesComunes"
+                    BackgroundColor="{StaticResource ColorBotones}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

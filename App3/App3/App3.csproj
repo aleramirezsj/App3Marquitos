@@ -16,19 +16,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ListaProvincasGrid.xaml.cs">
+    <Compile Update="Views\ListaProvincasGrid.xaml.cs">
       <DependentUpon>ListaProvincasGrid.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="InicioNavigationPage.xaml">
+    <EmbeddedResource Update="Views\ControlesComunes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ListaAlumnos.xaml">
+    <EmbeddedResource Update="Views\InicioNavigationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ListaProvincasGrid.xaml">
+    <EmbeddedResource Update="Views\ListaAlumnos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ListaProvincasGrid.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

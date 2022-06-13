@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3.Core"
              x:Class="App3.ListaProvinciasGrid">
+    
     <ContentPage.Content>
         <StackLayout x:Name="stkBodyProvincias" BackgroundColor="#efefef">
             
@@ -17,8 +19,24 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="logoargentina.png" HeightRequest="64" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Image>
                     <Label x:Name="lblProvincias" Text="Provincias Argentinas" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" FontSize="Large" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnDarkModeProvincias" Text="DarkMode" Clicked="setDarkMode" BackgroundColor="#efefef" Margin="5" CornerRadius="15" TextColor="Black"  Grid.Column="0" Grid.Row="0"></Button>
-                    <Button x:Name="btnRecordatorio" Text="Recordatorio" FontSize="12" BackgroundColor="#efefef" Margin="5" CornerRadius="15" TextColor="Black" Grid.Column="1" Grid.Row="0"></Button>
+                    <Button x:Name="btnDarkModeProvincias" 
+                            Text="{Static local:Literals.TextoBtnModoOscuro}" 
+                            Clicked="setDarkMode" 
+                            BackgroundColor="{StaticResource ColorBotones}" 
+                            Margin="5" 
+                            CornerRadius="15" 
+                            TextColor="Black"  
+                            Grid.Column="0" 
+                            Grid.Row="0"></Button>
+                    <Button x:Name="btnRecordatorio" 
+                            Text="{Static local:Literals.TextoBtnRecordatorio}" 
+                            FontSize="12" 
+                            BackgroundColor="{StaticResource ColorBotones}" 
+                            Margin="5" 
+                            CornerRadius="15" 
+                            TextColor="Black" 
+                            Grid.Column="1" 
+                            Grid.Row="0"></Button>
                 </Grid>
 
             <ScrollView x:Name="scrBodyProvincias">

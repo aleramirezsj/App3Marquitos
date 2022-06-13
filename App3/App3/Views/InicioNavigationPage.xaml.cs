@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App3.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,10 @@ namespace App3
         public async void AbrirListaProvincias(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ListaProvinciasGrid());
+        }
+        public async void AbrirControlesComunes(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ControlesComunes());
         }
     }
 }

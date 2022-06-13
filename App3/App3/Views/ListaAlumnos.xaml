@@ -16,7 +16,7 @@
             <ScrollView>
                 <StackLayout x:Name="stkBody" BackgroundColor="#efefef">
 
-                    <Button x:Name="btnVentanaEmergente" Text="Recordatorio" FontSize="Micro"></Button>
+                    <Button x:Name="btnVentanaEmergente" Text="Recordatorio" FontSize="Micro"/>
 
                     <StackLayout Orientation="Horizontal">
                         <Image Source="Marcos.jpg" WidthRequest="64" HeightRequest="64"></Image>

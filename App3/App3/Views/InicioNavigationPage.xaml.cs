@@ -29,5 +29,9 @@ namespace App3
         {
             await Navigation.PushAsync(new ControlesComunes());
         }
+        public async void AbrirListaProductos(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductoView());
+        }
     }
 }

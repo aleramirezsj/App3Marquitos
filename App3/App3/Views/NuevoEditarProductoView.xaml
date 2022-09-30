@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:App3.ViewModels"
+             x:Class="App3.Views.NuevoEditarProductoView">
+    <ContentPage.BindingContext>
+        <viewmodels:NuevoEditarProductoViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Agregar/Editar Producto" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Nombre:"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Precio:"/>
+                <Entry Grid.Row="0" Grid.Column="1"
+                       Placeholder="Ingrese el nombre"
+                       Text="{Binding Nombre}"/>
+                <Entry Grid.Row="1" Grid.Column="1"
+                       Placeholder="Ingrese el precio"
+                       Text="{Binding Precio}"/>
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Guardar"
+                        Command="{Binding GuardarCommand}"/>
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Cancelar"
+                        Command="{Binding CancelarCommand}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

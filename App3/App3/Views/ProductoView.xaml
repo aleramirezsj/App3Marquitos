@@ -25,9 +25,16 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                          
-                          
             </ScrollView>
+            <Button
+                Command="{Binding CargarNuevoCommand}"
+                Text="Cargar nuevo"/>
+            <Button
+                Command="{Binding ModificarCommand}"
+                Text="Modificar"/>
+            <Button
+                Command="{Binding EliminarCommand}"
+                Text="Eliminar"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

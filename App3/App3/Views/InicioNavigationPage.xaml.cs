@@ -16,6 +16,16 @@ namespace App3
         public InicioNavigationPage()
         {
             InitializeComponent();
+            MessagingCenter.Subscribe<object>(this, "AbrirNuevoEditarProductoView", 
+                async (obj) =>
+            {
+                await Navigation.PushAsync(new NuevoEditarProductoView());
+            });
+            MessagingCenter.Subscribe<object>(this, "VolverAProductoView",
+                async (obj) =>
+                {
+                    await Navigation.PopAsync();
+                });
         }
         public async void AbrirListaAlumnos(object sender, EventArgs e)
         {

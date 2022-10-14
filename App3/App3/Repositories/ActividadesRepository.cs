@@ -30,34 +30,35 @@ namespace App3.Repositories
             return JsonConvert.DeserializeObject<Actividad>(
                 await response.Content.ReadAsStringAsync());
         }
-        public async Task<bool> DeleteAsync(string id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            HttpClient client = Helper.ObtenerClienteHttp();
+            HttpClient client = Helper.ObtenerClienteHttpApiPropia();
             var response = await client.DeleteAsync(Url + "/" + id);
             return response.IsSuccessStatusCode;
         }
-        public async Task<bool> UpdateAsync(string nombre, float precio, string id)
+        public async Task<bool> UpdateAsync(string nombre, string horarios, decimal costo, int id)
         {
-            HttpClient client = Helper.ObtenerClienteHttp();
-            Producto producto = new Producto() {
-                _id=id,
+            HttpClient client = Helper.ObtenerClienteHttpApiPropia();
+            Actividad actividad = new Actividad() {
+                Id=id,
                 Nombre = nombre,
-                Precio = precio 
+                Horarios = horarios,
+                Costo= costo
             };
-            var response=await client.PutAsync(Url+"/"+id,new StringContent(JsonConvert.SerializeObject(producto),Encoding.UTF8,"application/json"));
+            var response=await client.PutAsync(Url+"/"+id,new StringContent(JsonConvert.SerializeObject(actividad),Encoding.UTF8,"application/json"));
             return response.IsSuccessStatusCode;
         }
-        public async Task<IEnumerable<Producto>> GetAllAsync()
+        public async Task<IEnumerable<Actividad>> GetAllAsync()
         {
-            HttpClient client = Helper.ObtenerClienteHttp();
+            HttpClient client = Helper.ObtenerClienteHttpApiPropia();
             var response=await client.GetStringAsync(Url);
-            return JsonConvert.DeserializeObject<IEnumerable<Producto>>(response);
+            return JsonConvert.DeserializeObject<IEnumerable<Actividad>>(response);
         }
-        public async Task<Producto> GetByIdAsync(string id)
+        public async Task<Actividad> GetByIdAsync(int id)
         {
-            HttpClient client = Helper.ObtenerClienteHttp();
+            HttpClient client = Helper.ObtenerClienteHttpApiPropia();
             var response = await client.GetStringAsync(Url + "/" + id);
-            return JsonConvert.DeserializeObject<Producto>(response); 
+            return JsonConvert.DeserializeObject<Actividad>(response); 
         }
     }
 }

@@ -23,34 +23,33 @@ namespace Test
         }
 
         [Test]
-        public async Task TestDeleteProducto()
+        public async Task TestDeleteActividad()
         {
-            var productosRepository = new ProductosRepository();
-            var borrado=await productosRepository.DeleteAsync("62b610da72ab58170000166b");
-            
+            var actividadesRepository = new ActividadesRepository();
+            var borrado=await actividadesRepository.DeleteAsync(14);
             Assert.That(true, Is.EqualTo(borrado));
         }
         [Test]
-        public async Task TestUpdateProducto()
+        public async Task TestUpdateActividad()
         {
-            var productosRepository = new ProductosRepository();
-            var actualizado = await productosRepository.UpdateAsync("Coca cola 3lts", 300f, "62b5fd2c72ab581700001591");
+            var actividadesRepository = new ActividadesRepository();
+            var actualizado = await actividadesRepository.UpdateAsync("Ajedrez Ramirez","Viernes 13:50hs a 16:40hs", 1500, 4);
             Assert.That(true, Is.EqualTo(actualizado));
         }
         [Test]
-        public async Task TestGetAllAsyncProductos()
+        public async Task TestGetAllAsyncActividades()
         {
-            var productosRepository = new ProductosRepository();
-            var productos= await productosRepository.GetAllAsync();
-            var primerProducto = productos.ElementAt<Producto>(0);
-            Assert.That(primerProducto.Nombre,Is.EqualTo("Coca cola 3lts"));
+            var actividadesRepository = new ActividadesRepository();
+            var actividades = await actividadesRepository.GetAllAsync();
+            var primerActividad = actividades.ElementAt<Actividad>(0);
+            Assert.That(primerActividad.Nombre,Is.EqualTo("Folklore en la nube"));
         }
         [Test]
         public async Task TestGetByIdAsyncProductos()
         {
-            var productosRepository = new ProductosRepository();
-            var producto = await productosRepository.GetByIdAsync("62b5fd2c72ab581700001591");
-            Assert.That(producto.Nombre, Is.EqualTo("Coca cola 3lts"));
+            var actividadesRepository = new ActividadesRepository();
+            var actividad = await actividadesRepository.GetByIdAsync(1);
+            Assert.That(actividad.Nombre, Is.EqualTo("Folklore en la nube"));
         }
     }
 }

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:App3.ViewModels"
+             x:Class="App3.Views.ActividadesView">
+    <ContentPage.BindingContext>
+        <viewmodels:ActividadesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Lista de actividades"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <ListView x:Name="listviewActividades"
+                          ItemsSource="{Binding Actividades, Mode=OneWay}"
+                          SelectionMode="Single"
+                          SelectedItem="{Binding ActividadSeleccionada}"
+                          IsPullToRefreshEnabled="True"
+                          RefreshCommand="{Binding ObtenerActividadesCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Nombre}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="Medium"/>
+                                    <Label Text="{Binding Horarios}" Grid.Column="0" Grid.Row="1" FontSize="Small"/>
+                                    <Label Text="{Binding Costo}" Grid.Column="1" Grid.Row="1" FontSize="Small" />
+                                </Grid>
+                            </ViewCell> 
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button
+                Command="{Binding CargarNuevoCommand}"
+                Text="Cargar nuevo"/>
+            <Button
+                Command="{Binding ModificarCommand}"
+                Text="Modificar"/>
+            <Button
+                Command="{Binding EliminarCommand}"
+                Text="Eliminar"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -20,6 +20,9 @@
     <Compile Update="Views\ListaProvincasGrid.xaml.cs">
       <DependentUpon>ListaProvincasGrid.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ActividadesView.xaml.cs">
+      <DependentUpon>ActividadesView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -43,5 +43,9 @@ namespace App3
         {
             await Navigation.PushAsync(new ProductoView());
         }
+        public async void AbrirListaActividades(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ActividadesView());
+        }
     }
 }

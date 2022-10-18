@@ -26,7 +26,7 @@ namespace Test
         public async Task TestDeleteActividad()
         {
             var actividadesRepository = new ActividadesRepository();
-            var borrado=await actividadesRepository.DeleteAsync(14);
+            var borrado=await actividadesRepository.RemoveAsync(14);
             Assert.That(true, Is.EqualTo(borrado));
         }
         [Test]

@@ -16,6 +16,8 @@
                     BackgroundColor="{StaticResource ColorBotones}"></Button>
             <Button Text="Lista de productos" Clicked="AbrirListaProductos"
                     BackgroundColor="{StaticResource ColorBotones}"></Button>
+            <Button Text="Lista de actividades" Clicked="AbrirListaActividades"
+                    BackgroundColor="{StaticResource ColorBotones}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -17,7 +17,9 @@
                           SelectionMode="Single"
                           SelectedItem="{Binding ActividadSeleccionada}"
                           IsPullToRefreshEnabled="True"
-                          RefreshCommand="{Binding ObtenerActividadesCommand}">
+                          RefreshCommand="{Binding ObtenerActividadesCommand}"
+                          IsRefreshing="{Binding IsRefreshing}">
+                          
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

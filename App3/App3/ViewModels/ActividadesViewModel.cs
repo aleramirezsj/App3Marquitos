@@ -42,6 +42,17 @@ namespace App3.ViewModels
         public Command ModificarCommand { get; }
         public Command EliminarCommand { get; }
         public Command ObtenerActividadesCommand { get; }
+        
+        bool isRefreshing;
+        public bool IsRefreshing
+        {
+            get => isRefreshing;
+            set
+            {
+                isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }
         public ActividadesViewModel()
         {
             actividades = new ObservableCollection<Actividad>();
@@ -65,15 +76,15 @@ namespace App3.ViewModels
 
         private void Modificar(object obj)
         {
-            MessagingCenter.Send<object>(this, "AbrirNuevoEditarProductoView");
+            MessagingCenter.Send<object,Actividad>(this, "AbrirNuevoEditarActividadView",ActividadSeleccionada);
         }
 
         private void CargarNuevo(object obj)
         {
-             MessagingCenter.Send<object>(this,"AbrirNuevoEditarProductoView");
+             MessagingCenter.Send<object>(this,"AbrirNuevoEditarActividadView");
         }
 
-        private async void ObtenerActividades(object obj)
+        public async void ObtenerActividades(object obj)
         {
             actividades.Clear();
             var actividadesCollection = await actividadesRepository.GetAllAsync();
@@ -81,6 +92,7 @@ namespace App3.ViewModels
             {
                 actividades.Add(actividad);
             }
+            IsRefreshing = false;
         }
     }
 }

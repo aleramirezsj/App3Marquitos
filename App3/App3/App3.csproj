@@ -23,6 +23,9 @@
     <Compile Update="Views\ActividadesView.xaml.cs">
       <DependentUpon>ActividadesView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\NuevoEditarActividadView.xaml.cs">
+      <DependentUpon>NuevoEditarActividadView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

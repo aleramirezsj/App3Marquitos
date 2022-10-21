@@ -1,4 +1,5 @@
-﻿using App3.Views;
+﻿using App3.Models;
+using App3.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,15 +18,22 @@ namespace App3
         {
             InitializeComponent();
             MessagingCenter.Subscribe<object>(this, "AbrirNuevoEditarProductoView", 
-                async (obj) =>
-            {
-                await Navigation.PushAsync(new NuevoEditarProductoView());
-            });
+                async (obj) =>await Navigation.PushAsync(new NuevoEditarProductoView()));
+
             MessagingCenter.Subscribe<object>(this, "VolverAProductoView",
-                async (obj) =>
+                async (obj) => await Navigation.PopAsync());
+  
+            MessagingCenter.Subscribe<object>(this, "AbrirNuevoEditarActividadView",
+                async (obj) => await Navigation.PushAsync(new NuevoEditarActividadView()));
+
+            MessagingCenter.Subscribe<object,Actividad>(this, "AbrirNuevoEditarActividadView",
+                async (obj,actividadAModificar) =>
                 {
-                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(new NuevoEditarActividadView(actividadAModificar));
                 });
+
+            MessagingCenter.Subscribe<object>(this, "VolverAActividadesView",
+                async (obj) => await Navigation.PopAsync());
         }
         public async void AbrirListaAlumnos(object sender, EventArgs e)
         {
@@ -47,5 +55,6 @@ namespace App3
         {
             await Navigation.PushAsync(new ActividadesView());
         }
+
     }
 }

@@ -22,8 +22,11 @@ namespace App3.Views
         {
             base.OnAppearing();
             var viewmodel = this.BindingContext as ActividadesViewModel;
-            if(viewmodel.Actividades!=null)
+            if (viewmodel.ActividadSeleccionada != null)
+            {
                 viewmodel.ObtenerActividades(this);
+                viewmodel.ActividadSeleccionada = null;
+            }
         }
     }
 }

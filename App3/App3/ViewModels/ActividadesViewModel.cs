@@ -34,6 +34,8 @@ namespace App3.ViewModels
             get { return actividadSeleccionada; }
             set { actividadSeleccionada = value;
                     OnPropertyChanged();
+                ModificarCommand.ChangeCanExecute();
+                EliminarCommand.ChangeCanExecute();
             }
         }
 
@@ -58,9 +60,19 @@ namespace App3.ViewModels
             actividades = new ObservableCollection<Actividad>();
             ObtenerActividadesCommand = new Command(ObtenerActividades);
             CargarNuevoCommand = new Command(CargarNuevo);
-            ModificarCommand = new Command(Modificar);
-            EliminarCommand = new Command(Eliminar);
+            ModificarCommand = new Command(Modificar,PermitirModificar);
+            EliminarCommand = new Command(Eliminar,PermitirEliminar) ;
             ObtenerActividades(this);
+        }
+
+        private bool PermitirEliminar(object arg)
+        {
+            return actividadSeleccionada!=null;
+        }
+
+        private bool PermitirModificar(object arg)
+        {
+            return actividadSeleccionada!=null;
         }
 
         private async void Eliminar(object obj)
